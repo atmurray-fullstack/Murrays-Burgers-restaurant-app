@@ -1,0 +1,24 @@
+{
+  "name": "murrays-burgers-restaurant-app",
+  "version": "1.0.0",
+  "description": "A burger logging restaurant app. Uses MySQL, Node, Express, Handlebars, and ORM. Follows MVC design pattern.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atmurray-fullstack/Murrays-Burgers-restaurant-app.git"
+  },
+  "author": "Andrew Murray",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atmurray-fullstack/Murrays-Burgers-restaurant-app/issues"
+  },
+  "homepage": "https://github.com/atmurray-fullstack/Murrays-Burgers-restaurant-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "mysql": "^2.18.1"
+  }
+}
