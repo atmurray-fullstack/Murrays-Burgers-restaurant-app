@@ -3,27 +3,34 @@ const connection = require('./connection.js');
 
 
 var orm = {
-    selectAll:function(){
-        let qString = "SELECT burger_name FROM burgers"
+    selectAll:function(tableName){
+        let qString = 'SELECT* FROM '+tableName
         connection.query(qString,function(err,result){
             if (err) throw err;
             console.log(result);
         })
     },
     
-    insertOne:function(tableInput,col1,col2,val1, val2){
-        let qString = 'INSERT INTO '+tableInput+'(';
-        qString+=col1+','+col2+') ';
-        qString+='VALUES('+val1+','+val2+')';
-        connection.query(qString,function(err,result){
+    insertOne:function(tableName,colName1,colName2,burgerName,eaten){
+        let qString = 'INSERT INTO '+tableName+'('+colName1+', '+colName2+') VALUES (?,?)';
+       
+        connection.query(qString,[burgerName,eaten],function(err,result){
             if (err) throw err;
             console.log(result);
         })
     },
     
-    updateOne: function(){
-        console.log('updateOne')
+    updateOne: function(tableName,colName1,colName2,burgerName,eaten){
+        console.log(tableName,colName1,colName2,burgerName,eaten);
+        let qString = 'UPDATE '+tableName+' SET '+colName1+'='+eaten+' WHERE ??=?';
+        connection.query(qString,[colName2,burgerName],function(err,results){
+            if(err) throw err
+            console.log(results);
+        })
+        console.log()
     }
 }
-orm.selectAll();
+// orm.insertOne('burgers','burger_name','devoured','MachoAndrew Burger',false);
+// orm.updateOne('burgers','devoured','burger_name','KarateKidBurger',false);
+orm.selectAll('burgers');
 module.exports = orm;
