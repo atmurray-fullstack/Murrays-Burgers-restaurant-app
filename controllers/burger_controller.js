@@ -8,12 +8,21 @@ router.get('/', function(req,res){
         const hdlbrsObj = {
             burgers:data
         };
-        console.log(hdlbrsObj);
+        console.log(hdlbrsObj)
         res.render('index',hdlbrsObj);
     });
 });
 
-router.post('')
+router.post('/',function(req,res){
+    burger.createBurger(req.body.newBurger,function(){
+        burger.allBurgers(function(data){
+            const hdlbrsObj = {
+                burgers:data
+            };
+            res.render('index',hdlbrsObj);
+        });
+    })
+})
 
 
 
