@@ -1,9 +1,10 @@
-$(function () {
-    $("#makeBurger").on("click", function (event) {
+$(document).ready(function () {
+
+    $("#makeBurger").on("submit", function (event) {
         event.preventDefault();
         console.log('makeBurger');
         const newBurger = {
-            burger_name: $("newBurger").val().trim(),
+            burger_name: $("#newBurger").val(),
             devoured: false
         };
 
@@ -16,27 +17,25 @@ $(function () {
         })
     });
 
-    $("input.eatBurger").on("submit", function (event) {
+    $("#notEaten .eatBurger").on("click", function (event) {
         event.preventDefault();
 
-        console.log('button' + '-'.repeat(75))
+        console.log('button' + '-'.repeat(75));
 
-        var name = $(this).data('name').val();
+        var name = $(this).data('name').trim();
         var id = $(this).data('id');
-
-        console.log(name + '-'.repeat(75))
 
         var ateBurger = {
             burger_name: name,
             id: id
         }
-
-        $.ajax("/api/burgers/" + name, {
+        console.log(ateBurger + '-'.repeat(75))
+        $.ajax("/", {
             type: "PUT",
             data: ateBurger
         }).then(function () {
             console.log("Ate burger!")
             location.reload();
-        }).catch();
+        })
     })
 });

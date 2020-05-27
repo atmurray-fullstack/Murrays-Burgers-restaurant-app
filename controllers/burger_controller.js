@@ -16,7 +16,8 @@ router.get('/', function (req, res) {
 
 router.post('/', function (req, res) {
     console.log('makeburgers' + '-'.repeat(75))
-    burger.createBurger(req.body.newBurger, function () {
+    console.log(req.body.newBurger);
+    burger.createBurger(req.body.burger_name, function () {
         burger.allBurgers(function (data) {
             const hdlbrsObj = {
                 burgers: data
@@ -26,10 +27,10 @@ router.post('/', function (req, res) {
     })
 })
 
-router.put("/api/burgers/:name", function (req, res) {
-    console.log('updateburgers: ' + req.params.name + '-'.repeat(75));
-
-    burger.updateBurger(req.params.name, function () {
+router.put("/", function (req, res) {
+    console.log('updateburgers: '+'-'.repeat(75));
+    
+    burger.updateBurger(req.body.burger_name, function () {
 
         burger.allBurgers(function (data) {
             const hdlbrsObj = {
