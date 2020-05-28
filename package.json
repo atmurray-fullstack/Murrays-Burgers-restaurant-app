@@ -4,6 +4,7 @@
   "description": "A burger logging restaurant app. Uses MySQL, Node, Express, Handlebars, and ORM. Follows MVC design pattern.",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
