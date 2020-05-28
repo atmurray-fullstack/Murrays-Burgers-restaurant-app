@@ -1,15 +1,42 @@
-#notEaten{
- 
+.container{
+    background-color: wheat;
+    width: 100%;
+    max-resolution: 0;
+}
+.headers{
+    font-family: 'Ultra', serif;
+    color:white;
+    background-color: orange;
+    border:grey solid 3px;
+    border-radius: 2px 2px 2px 2px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+}
+.headers h1{
+    margin-left:auto;
+}
+#notEaten .h3{
+ text-align: center;
 }
 
 .burgers{
+    
+    font-size: 1.5rem;
     height:100%;
     padding: 1% 1% 1% 1%;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 50%;
+    font-family: 'Concert One', cursive;
+    
 }
 
 #container-burger{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('https://lh3.googleusercontent.com/proxy/7Z3TfJ8Du347MexQ-f_ZtQrz_xPNXmfYatdXWQnlTIucmYnf2iFa-RRj6Cj2JT-KSmvQyyqp9bIan7VEW_UZvlA7rA');
+    border-radius: 2% 2% 2% 2%;
+    border: gray solid 3px;
     display: flex;
     background-color: pink;
     width:95%;
@@ -19,15 +46,25 @@
 
 }
 #burgerForm{
-    display: flex;
+    background-color:orange;
+    border-radius: 8px;
+}
+#burgerForm h3{
+    font-size: 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    color:white;
     margin: auto;
-    width: 95%;
-    background-color: gray;
-    padding-left:auto;
 }
 #makeBurger{
-    width: 50%;
+    
     padding-left: auto;
     margin: auto;
 
+}
+#newBurger{    
+    font-size: 16px;
+}
+.eatBurger{
+    font: size 2rem;;
 }

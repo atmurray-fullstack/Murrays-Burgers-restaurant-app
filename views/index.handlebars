@@ -1,49 +1,54 @@
-<div class='headers'>
-    <h1 class='display-4'>Welcome to Murray's Burger Joint</h1>
-
-
+<div class=' row'>
+    <div class='col-11 mx-auto headers text-center mt-4 pb-2 pt-2'>
+        <h1>Welcome to Murray's Burger Joint</h1>
+    </div>
 </div>
-<div id='container-burger' class = 'all-burgers'>
+<div class='row'>
+    <div id='container-burger' class='all-burgers col-11 mx-auto'>
 
-    <div id='notEaten' class='burgers'>
-        <h3>Not Eaten</h3>
-        <ul>
-            {{#each burgers}}
-            {{#unless this.devoured}}
-            <li>
-                <p>{{this.id}} burger: {{this.burger_name}}</p>
-                <input class='eatBurger' type = "button" value='Eat Da Burger!' data-name='{{burger_name}}'/>
-            </li>
-            {{/unless}}
-            {{/each}}
-        </ul>
+        <div id='notEaten' class='burgers col-6'>
+            <h3>Not Eaten</h3>
+            <ul>
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <li>
+                    <p class = 'badge-warning mt-3'>{{this.id}} burger: {{this.burger_name}}</p>
+                    <input class='eatBurger btn btn-secondary' type="button" value='Eat Da Burger!' data-name='{{burger_name}}' />
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+        </div>
+        <div id='Eaten' class='burgers col-6 text-center'>
+            <h3>Eaten</h3>
+            <ul>
+                {{#each burgers}}
+                {{#if this.devoured}}
+                <li>
+                    <p class = 'badge-warning'>{{this.id}} burger: {{this.burger_name}}</p>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
 
     </div>
-    <div id='Eaten' class='burgers'>
-        <h3>Eaten</h3>
-        <ul>
-            {{#each burgers}}
-            {{#if this.devoured}}
-            <li>
-                <p>{{this.id}} burger: {{this.burger_name}}</p>
-            </li>
-            {{/if}}
-            {{/each}}
-        </ul>
-
-    </div>
-
 </div>
 
 
-<div id='burgerForm'>
-    <h3>Add a new Hamburger to the Menu!</h3>
-    <hr>
-    <div id='makeBurger'>
-        <form action="/" method="POST">
-            <textarea id='newBurger' type="text" name="newBurger"></textarea>
-            <br>
-            <button type="submit">Submit</button>
-        </form>
+<div class='row mt-1'>
+    <div id = 'burgerForm' class=' col-10 mx-auto text-center'>
+        <h3>Add a new Hamburger to the Menu!</h3>
+        <hr>
+        <div id='makeBurger'>
+            <form action="/" method="POST">
+                <textarea id='newBurger' type="text" name="newBurger" cols='50'></textarea>
+                <div class = 'pb-2'>
+                <button class ='btn btn-outline-dark btn-lg' type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
